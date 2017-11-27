@@ -28,7 +28,18 @@
 	         style="skin_hotspotstyle"
 			 ath="-144.708003" atv="2.898477" />		
 
+	<hotspot name="hs8" text="麻雀岭"
+	         style="skin_hotspotstyle"
+			 ath="-159.416167" atv="0.336364" />
+			 
+	<hotspot name="hs9" text="亚公岭"
+	         style="skin_hotspotstyle"
+			 ath="-170.922356" atv="-3.349007"  />
 
+	<hotspot name="hs10" text="大亚湾"
+	         style="skin_hotspotstyle"
+			 ath="-61.152475" atv="-16.411761"  />			 
+			 
 
 			 
 			 
