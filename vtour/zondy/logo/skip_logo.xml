@@ -1,0 +1,9 @@
+﻿<krpano>
+
+
+	<!-- *******添加跳转logo********* -->
+	<layer name="my_logo" enabled="true" capture="true" keep="true" x="15" y="15" align="lefttop"  url="%SWFPATH%/zondy/pic/zondy.png" scale="0.2" onclick="openurl('http://192.168.1.54:8090/',_blank);" />
+	
+	<!-- ********添加跳转logo******************** -->
+
+</krpano>

@@ -1,0 +1,7 @@
+﻿<krpano>
+
+	<include url="%SWFPATH%/plugins/showtext.xml" />
+	<plugin name="editor" url="%SWFPATH%/plugins/editor.swf" keep="true" /> 
+	
+	
+</krpano>

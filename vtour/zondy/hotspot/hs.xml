@@ -1,0 +1,13 @@
+<krpano>
+	<hotspot name="hs1" text="what is this"
+	         style="skin_hotspotstyle"
+			 ath="-135.822378" atv="1.565953" >
+		<!-- <point ath="-157.466093" atv="2.345857" /> -->
+		<!-- <point ath="-158.631541" atv="5.93739" /> -->
+		<!-- <point ath="-127.569607" atv="8.10712" /> -->
+		<!-- <point ath="-118.748296" atv="6.33227" /> -->
+		<!-- <point ath="-103.164281" atv="2.768278" /> -->
+		<!-- <point ath="-104.533193" atv="1.213995" /> -->
+		<!-- <point ath="-121.240338" atv="0.269964" /> -->
+	</hotspot>
+</krpano>
