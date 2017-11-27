@@ -1,13 +1,38 @@
 <krpano>
-	<hotspot name="hs1" text="what is this"
+	<hotspot name="hs1" text="七星湾"
 	         style="skin_hotspotstyle"
-			 ath="-135.822378" atv="1.565953" >
-		<!-- <point ath="-157.466093" atv="2.345857" /> -->
-		<!-- <point ath="-158.631541" atv="5.93739" /> -->
-		<!-- <point ath="-127.569607" atv="8.10712" /> -->
-		<!-- <point ath="-118.748296" atv="6.33227" /> -->
-		<!-- <point ath="-103.164281" atv="2.768278" /> -->
-		<!-- <point ath="-104.533193" atv="1.213995" /> -->
-		<!-- <point ath="-121.240338" atv="0.269964" /> -->
-	</hotspot>
-</krpano>
+			 ath="-147.99832" atv="5.8466"/>
+			 <!-- ath="-135.822378" atv="1.565953" /> -->
+			 
+    <hotspot name="hs2" text="插旗岭"
+	         style="skin_hotspotstyle"
+			 ath="178.109818" atv="0.528136" />	
+
+    <hotspot name="hs3" text="香车水库"
+	         style="skin_hotspotstyle"
+			 ath="129.832179" atv="9.345424" />	
+	
+	<hotspot name="hs4" text="大鹏半岛国家地质公园"
+	         style="skin_hotspotstyle"
+			 ath="99.411119" atv="85.833595" />
+			 
+	<hotspot name="hs5" text="七娘山"
+	         style="skin_hotspotstyle"
+			 ath="-3.943182" atv="-19.279414" />
+
+	<hotspot name="hs6" text="蜈蚣岭"
+	         style="skin_hotspotstyle"
+			 ath="-139.44774" atv="0.435779" />	
+			 
+	<hotspot name="hs7" text="仙人石"
+	         style="skin_hotspotstyle"
+			 ath="-144.708003" atv="2.898477" />		
+
+
+
+			 
+			 
+			 
+			 
+
+   </krpano>
