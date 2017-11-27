@@ -92,7 +92,7 @@
 	
 	<scene name="scene_GEO_PARK" title="大鹏半岛地质公园" onstart="" thumburl="panos/GEO_PARK.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-179.397" vlookat="9.771" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/GEO_PARK.tiles/preview.jpg" />
 
