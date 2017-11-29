@@ -66,7 +66,7 @@
 	               thumbs_loop="false"
 	               tooltips_buttons="false"
 	               tooltips_thumbs="false"
-	               tooltips_hotspots="false"
+	               tooltips_hotspots="true"
 	               tooltips_mapspots="false"
 	               deeplinking="false"
 	               loadscene_flags="MERGE"
@@ -269,7 +269,7 @@
 		<style name="skin_hotspotstyle" distorted="false" url="vtourskin_hotspot.png" scale="0.001" edge="top" zorder="1002"
 	       tooltip=""
 	       onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
-	       onloaded="add_all_the_time_tooltip();"
+	       onloaded="add_all_the_time_tooltip();do_crop_animation(128,128,24)"
 	       />
 	
 <!-- 	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" scale="0.5" edge="top" distorted="true"
@@ -361,11 +361,16 @@
 				<!-- 显示声音播放按钮 -->				
 				<layer name="skin_btn_sound"     style="skin_base|skin_glow" crop="64|704|64|64"  align="right"      ox="0"   x="130"   y="0"  scale="0.5" onclick="pausesoundtoggle(bgsnd);switch(crop,64|704|40|64,64|704|64|64);switch(alpha,1,0.25);switch(ox,0,-12)" />
 				<!-- **************************************** -->
+				<!-- 全屏按钮			 -->
 				<layer name="skin_btn_fs"        style="skin_base|skin_glow" crop="0|576|64|64"  align="right"       x="90"   y="0"  scale="0.5" onclick="switch(fullscreen);" devices="fullscreensupport" />
+				<!-- 隐藏菜单按钮 -->
 				<layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" />
+				<!-- 显示菜单按钮 -->
 				<layer name="skin_btn_show" type="container" bgcapture="true" align="bottom" width="100%" height="get:skin_settings.controlbar_height" y="calc:skin_settings.controlbar_height - skin_settings.controlbar_offset_closed" onclick="skin_showskin()" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();" visible="false" capture="false" alpha="0.0">
+				<!-- 显示菜单按钮图标设置 -->
 					<layer name="skin_btn_show_icon" style="skin_base" crop="64|448|64|64" scale="0.5" align="bottom" y="2" enabled="false" />
 				</layer>
+				<!-- 底部下一个按钮 -->
 				<layer name="skin_btn_next"      style="skin_base|skin_glow" crop="64|64|64|64"  align="right"       x="5"    y="0"   scale="0.5" alpha="0.5"  onclick="if(skin_settings.thumbs_loop, skin_nextscene_loop(+1), skin_nextscene(+1) );" />
 				</layer>
 			</layer>
@@ -557,8 +562,18 @@
 		set(view.limitview, lookto);
 		set(view.vlookatmin, 90);
 		set(view.vlookatmax, 90);
+		<!-- ************消除动态热点显示************* -->
+		set_hotspot_visible(false);
+		set(layer[skin_layer].visible,false);
+		set(layer[skin_layer].alpha,0);
+		set(layer[skin_control_bar].visible,false);
+		set(layer[skin_control_bar].alpha,0);
+		set(layer[skin_splitter_bottom].visible,false);
+		set(layer[skin_splitter_bottom].alpha,0);
+		<!-- ************消除动态热点显示模块结束************* -->
 		lookat(calc(lp_hlookat - 180), 90, 150, 1, 0, 0);
 		set(events[lp_events].onloadcomplete,
+			<!-- ************调整此处数值可以改变小行星动画时间************* -->
 			delayedcall(0.5,
 				if(lp_scene === xml.scene,
 					set(control.usercontrol, off);
@@ -570,12 +585,36 @@
 						set(control.usercontrol, all);
 						tween(view.fovmax, get(lp_fovmax));
 						);
+					<!-- ************完成小星星过场动画重新显示动态热点*********** -->
+					set_hotspot_visible(true);
+					set(layer[skin_layer].visible,true);
+					tween(layer[skin_layer].alpha,1,1);
+					set(layer[skin_control_bar].visible,true);
+					tween(layer[skin_control_bar].alpha,1,1);
+					set(layer[skin_splitter_bottom].visible,true);
+					tween(layer[skin_splitter_bottom].alpha,1,1);
+					<!-- ************完成小星星过场动画重新显示动态热点*********** -->
 				  );
 			  );
-		  );
+			);		
+		  
 	</action>
-
-
+	<!-- ************完成小星星过场动画重新显示动态热点*********** -->
+	<action name="set_hotspot_visible">
+	for(set(i,0),i LT hotspot.count,inc(i),
+	   if(%1 == false,
+	   	if(hotspot[get(i)].visible == true,
+	   		set(hotspot[get(i)].mark,true);set(hotspot[get(i)].visible,%1);
+	   		);
+	   	,
+	   	if(hotspot[get(i)].mark == true,
+	   		set(hotspot[get(i)].visible,%1);
+	   		);
+	   	);
+	  
+	);
+	</action>
+	<!-- ************完成小星星过场动画重新显示动态热点*********** -->
 	<action name="skin_onresize">
 		mul(mh, area.pixelheight, -1);
 		if(layer[skin_thumbs].state == 'opened', add(mh,layer[skin_thumbs].height); );

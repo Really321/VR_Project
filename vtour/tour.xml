@@ -87,7 +87,33 @@
 		loadscene(get(startscene), null, MERGE);
 		if(startactions !== null, startactions() );
 	</action>
-
+	
+	<!-- 增加动态热点执行动作模块 -->
+	<action name="do_crop_animation">
+	<!-- 为热点注册属性 -->
+	registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+	registerattribute(yframes, calc((imageheight / %2) BOR 0));
+	registerattribute(frames, calc(xframes * yframes));
+	registerattribute(frame, 0);
+ 
+	set(crop, '0|0|%1|%2');
+ 
+	setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+		if(loaded,
+			inc(frame);
+			if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
+			mod(xpos, frame, xframes);
+			div(ypos, frame, xframes);
+			Math.floor(ypos);
+			mul(xpos, %1);
+			mul(ypos, %2);
+			calc(crop, xpos + '|' + ypos + '|%1|%2');
+		  ,
+			clearinterval(calc('crop_anim_' + name));
+		  );
+	  );
+	</action>
+	<!-- 增加动态热点执行动作模块结束 -->
 
 	
 	<scene name="scene_GEO_PARK" title="大鹏半岛地质公园" onstart="" thumburl="panos/GEO_PARK.tiles/thumb.jpg" lat="" lng="" heading="">
