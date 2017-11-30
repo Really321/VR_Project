@@ -131,6 +131,9 @@
 		<!-- place your scene hotspots here -->
 		
 	<include url="%SWFPATH%/zondy/hotspot/hs.xml" />
+			<!-- 加入热点 -->
+	<include url="%SWFPATH%/zondy/hotspot/hs1.xml" />
+	<include url="%SWFPATH%/zondy/point_pic.xml" />
 	
 	</scene>
 

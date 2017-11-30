@@ -1,0 +1,16 @@
+﻿<krpano>
+	<!--**********************增加多边形热点，进行颜色等参数调整 *********************-->
+	<hotspot name="hs3" type="Ploygonal" text="香车水库" fillcolor="0x00cba3" fillalpha="0.3" borderwidth="3.0" bordercolor="0x00cba3" borderalpha="0.6" devices="all" zoom ="true" 	         
+	         depth="1000"
+	         polyline="false"
+	         scaleflying="true"	         
+	         tx="0"
+	         ty="0"
+	         tz="0"
+			 onclick="set(layer[photo1].visible,true);" onhover="showtext('信息展示');" onover="" onout="" >
+			 <!-- ath="129.832179" atv="9.345424"	> -->
+
+	</hotspot>
+	
+
+</krpano>
