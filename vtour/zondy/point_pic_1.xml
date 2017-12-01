@@ -1,0 +1,131 @@
+﻿<krpano>
+
+
+<!-- ************************* -->
+<skin_settings photo1_id="1" photo1_total="4" />
+<!-- 标题-->
+<layer name="photo1" visible="false" enabled="True" keep="false" type="container" bgcolor="0x000000" bgalpha="0.6" align="center" width="500" height="660" x="0" y="0" zorder="1000">
+
+	<layer name="photo1_phototext" keep="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="top" width="100%" height="50" x="0" y="0" zorder="1001">
+		<layer name="photo1_phototext_title" url="%SWFPATH%/plugins/textfield.swf" align="center" edge="center" width="95%" height="32" autoheight="true" x="0" y="0" zorder="1002" enabled="true" background="false" border="false" html="香车水库集锦" css="text-align:center; color:#FFFFFF; font-family:微软雅黑; font-size:26px;" textshadow="0" visible="true" />
+	</layer> 
+<!-- 标题-->
+
+	<!-- 展示区-->
+	<layer name="photo1_photoshow" keep="true" type="container" bgcolor="0x000000" bgalpha="0.0" align="top" width="100%" height="400" x="0" y="50" zorder="1001">
+	   
+		<layer name="photo1_photobox_left" url="%SWFPATH%/zondy/pic/icon/mapleft.png" zorder="1000" align="left"  edge="left"  width="25" height="42" x="15" y="0" onclick="if(skin_settings.photo1_id GT 1,set(layer[photo1_photobox_img].width,);set(layer[photo1_photobox_img].height,);sub(skin_settings.photo1_id,1);txtadd(myimgname,photo1_thumbs_img,get(skin_settings.photo1_id));copy(myimgsrc,layer[get(myimgname)].url);set(layer[photo1_photobox_img].url,get(myimgsrc));copy(myimgx,layer[get(myimgname)].x);set(layer[photo1_thumbs_kuang].x,get(myimgx));)"/>
+
+		<layer name="photo1_photobox_right" url="%SWFPATH%/zondy/pic/icon/mapright.png" zorder="1000" align="right"  edge="right"  width="25" height="42" x="15" y="0" onclick="if(skin_settings.photo1_id LT skin_settings.photo1_total,set(layer[photo1_photobox_img].width,);set(layer[photo1_photobox_img].height,);add(skin_settings.photo1_id,1);txtadd(myimgname,photo1_thumbs_img,get(skin_settings.photo1_id));copy(myimgsrc,layer[get(myimgname)].url);set(layer[photo1_photobox_img].url,get(myimgsrc));copy(myimgx,layer[get(myimgname)].x);set(layer[photo1_thumbs_kuang].x,get(myimgx));)"/>
+
+		<layer name="photo1_photobox_img" url="%SWFPATH%/zondy/pic/粤海门村.jpg" align="center"  edge="center"  width="100%" height="100%" x="0" y="0" onloaded="div(mw,get(imagewidth),3);div(mh,get(imageheight),2);if(mw GT mh,if(imagewidth GT 600,set(width,600);,set(height,prop);set(width,get(imagewidth)););,set(width,prop);if(imageheight GT 400,set(height,400);,set(height,get(imageheight));););">
+		
+		   <!-- 滚动文字部分，基本的三大部分，一个是scrollarea插件必须要有的父元素，也就是textmask，它是一个容器container，width和height采用了负值，则是以父元素的尺寸加上该负值后的最终结果，也就是父元素的宽度减去30像素作为textmask的宽度，父元素高度减去10像素作为textmask的高度，同时maskchildren="true"也保证了文字滚动时不会超出遮罩区域。 -->
+
+            <!-- <layer name="textmask"  type="container" align="center" x="5" y="5" width="600" height="200" children="true"> -->
+
+                <!-- scrollarea插件。因为是垂直方向，所以direction="v"，onscroll事件下的动作确保滚动区域的正确位置。 -->
+
+                <!-- <layer name="textscroller" keep="true" url="%SWFPATH%/plugins/scrollarea.swf" visible= "true"  children="true"
+                       alturl="%SWFPATH%/plugins/scrollarea.js" mwheel="true" direction="v" overscroll="0"
+                       align="lefttop" width="100%" height="100%"
+                       onscroll="if(hoverflow GT 0, div(yp,toverflow,hoverflow);Math.min(yp,1);Math.max(yp,0); copy(th,layer[scrollbar].pixelheight);sub(th,layer[scrollup].pixelheight);sub(th,layer[scrolldown].pixelheight);sub(th,layer[scrollslider].pixelheight); mu l(yp,th);add(yp,layer[scrollup].pixelheight); copy(layer[scrollslider].y,yp); );">
+
+                    <!-- textfield插件。文本部分，文本内容有HTML属性决定。css属性确定字体样式。通过autoheight属性自动确定文本所占据的高度，同时将这个高度将调整尺寸时赋予textscroller。 -->
+
+                   <layer name="text" url="%SWFPATH%/plugins/textfield.swf"  align="center"  edge="center"  x="0" y="400" width="100%" zorder="1000"
+                           autoheight="true" background="false" border="false"
+                           onautosized="copy(layer[photo1_photoshow].height, height);"
+
+                           padding="10 15"
+
+                           html="data:testtext"
+
+                           css="color:#ffffff; font-family:Arial; font-size:24px;"
+
+                            />
+
+                 <!-- </layer>
+
+            </layer> -->
+
+            <!-- 滚动条部分，包括了向上scrollup向下scrolldown以及滚动条scrollslider本身。 -->
+
+           <!--  <layer name="scrollbar" type="container" bgcolor="0x000000" bgalpha="0.25" align="righttop" x="5" y="5"
+                   width="19" height="-10">
+
+                <layer name="scrollup" url="%SWFPATH%/zondy/pic/icon/dirbutton.png" align="righttop" x="19" rotate="-90"
+                       crop="0|0|19|19" onovercrop="0|19|19|19" ondowncrop="0|38|19|19"
+                       ondown="asyncloop(pressed, layer[textscroller].scrollby(0,+1));"/>
+
+                <layer name="scrolldown" url="%SWFPATH%/zondy/pic/icon/dirbutton.png" align="rightbottom" x="19" rotate="+90"
+                       crop="0|0|19|19" onovercrop="0|19|19|19" ondowncrop="0|38|19|19"
+                       ondown="asyncloop(pressed, layer[textscroller].scrollby(0,-1));"/>
+
+                <layer name="scrollslider" url="%SWFPATH%/zondy/pic/icon/sliderbutton.png" align="righttop" x="0" y="19"
+                       crop="0|0|19|19" onovercrop="0|19|19|19" ondowncrop="0|38|19|19"
+                       ondown="if(layer[textscroller].hoverflow GT 0, copy(cy,y);copy(sy,mouse.stagey);dragging(); );"
+                       dragging="if(pressed, sub(dy,mouse.stagey,sy);add(ny,cy,dy);Math.max(ny,layer[scrollup].pixelheight); copy(th,layer[scrollbar].pixelheight);sub(th,layer[scrolldown].pixelheight);sub(th,layer[scrollslider].pixelheight);Math.min(ny,th); copy(y,ny); sub(ny,layer[scrollup].pixelheight);sub(th,layer[scrollslider].pixelheight);div(ny,th); copy(fh,layer[textscroller].hoverflow); mul(fh,-1); mul(ny,fh); layer[textscroller].stopscrolling(); copy(layer[textscroller].y,ny); delayedcall(0,dragging()); );"/>
+
+            </layer> -->
+		</layer>
+		
+	</layer>
+	
+			<data name="testtext">
+
+            粤海门村城市更新单元[br/]
+            [br/]
+            位置——粤海街道白石路与科技南一路交汇处[br/]
+            [br/]
+
+            拆除用地面积——3.2万平方米[br/]
+            建设用地面积——3万平方米[br/]
+			建筑面积——19.6万平方米[br/]
+			[br/]
+			包括——公共配套设施包括6班幼儿园、社区健康服务中心、居住小区级文化室、社区肉菜市场、社区警务室等[br/]
+			预计总投资——12亿元[br/]
+			[br/]
+			
+
+            性质——该项目将建设成为配套齐全、环境优美的现代化商住混合区，改善片区居住环境，为深圳大学和高新园提供综合配套服务
+            [br/]
+
+        </data>	
+	<!-- 展示区-->
+
+	<!-- 缩略图区--> 
+	<!--***********************调用文字显示************-->
+	
+	<!--***********************调用文字显示模块结束************-->
+	
+	
+	
+	
+<!-- 	<layer name="photo1_photobox" keep="false" type="container" bgcolor="0x000000" bgalpha="0.2" align="bottom" width="500" height="200" x="0" y="0" zorder="1001">
+	  
+		<layer name="photo1_photoboxin" keep="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="center" width="690" height="100" x="0" y="0" zorder="1001">
+
+			<layer name="photo1_photobox_scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" direction="h" align="center" width="375" height="100" zorder="1005" onloaded="setcenter(0,0);">
+
+				<layer  name="photo1_thumbs_img1" url="%SWFPATH%/photo/photo1/1378805590FE1A.jpg" align="left"  edge="left"  width="90" height="90" x="0" y="0" onclick="set(layer[photo1_photobox_img].width,);set(layer[photo1_photobox_img].height,);set(layer[photo1_thumbs_kuang].x,get(x));set(skin_settings.photo1_id,1);set(imgsrc,get(url));set(layer[photo1_photobox_img].url,get(imgsrc));" onloaded="set(mw,get(imagewidth));set(mh,get(imageheight));if(mw GT mh,sub(mdex,get(mw),get(mh));div(mdex,2);txtadd(croptxt,get(mdex),|,0,|,get(mh),|,get(mh));set(crop,get(croptxt));,sub(mdex,get(mh),get(mw));div(mdex,2);txtadd(croptxt,0,|,get(mdex),|,get(mw),|,get(mw));set(crop,get(croptxt)););"/>
+
+				<layer  name="photo1_thumbs_img2" url="%SWFPATH%/photo/photo1/1378805590FE4A.jpg" align="left"  edge="left"  width="90" height="90" x="95" y="0" onclick="set(layer[photo1_photobox_img].width,);set(layer[photo1_photobox_img].height,);set(layer[photo1_thumbs_kuang].x,get(x));set(skin_settings.photo1_id,2);set(imgsrc,get(url));set(layer[photo1_photobox_img].url,get(imgsrc));" onloaded="set(mw,get(imagewidth));set(mh,get(imageheight));if(mw GT mh,sub(mdex,get(mw),get(mh));div(mdex,2);txtadd(croptxt,get(mdex),|,0,|,get(mh),|,get(mh));set(crop,get(croptxt));,sub(mdex,get(mh),get(mw));div(mdex,2);txtadd(croptxt,0,|,get(mdex),|,get(mw),|,get(mw));set(crop,get(croptxt)););"/>
+
+				<layer  name="photo1_thumbs_img3" url="%SWFPATH%/photo/photo1/1378805590FE89.jpg" align="left"  edge="left"  width="90" height="90" x="190" y="0" onclick="set(layer[photo1_photobox_img].width,);set(layer[photo1_photobox_img].height,);set(layer[photo1_thumbs_kuang].x,get(x));set(skin_settings.photo1_id,3);set(imgsrc,get(url));set(layer[photo1_photobox_img].url,get(imgsrc));" onloaded="set(mw,get(imagewidth));set(mh,get(imageheight));if(mw GT mh,sub(mdex,get(mw),get(mh));div(mdex,2);txtadd(croptxt,get(mdex),|,0,|,get(mh),|,get(mh));set(crop,get(croptxt));,sub(mdex,get(mh),get(mw));div(mdex,2);txtadd(croptxt,0,|,get(mdex),|,get(mw),|,get(mw));set(crop,get(croptxt)););"/>
+
+				<layer  name="photo1_thumbs_img4" url="%SWFPATH%/photo/photo1/1378805590FED8.jpg" align="left"  edge="left"  width="90" height="90" x="285" y="0" onclick="set(layer[photo1_photobox_img].width,);set(layer[photo1_photobox_img].height,);set(layer[photo1_thumbs_kuang].x,get(x));set(skin_settings.photo1_id,4);set(imgsrc,get(url));set(layer[photo1_photobox_img].url,get(imgsrc));" onloaded="set(mw,get(imagewidth));set(mh,get(imageheight));if(mw GT mh,sub(mdex,get(mw),get(mh));div(mdex,2);txtadd(croptxt,get(mdex),|,0,|,get(mh),|,get(mh));set(crop,get(croptxt));,sub(mdex,get(mh),get(mw));div(mdex,2);txtadd(croptxt,0,|,get(mdex),|,get(mw),|,get(mw));set(crop,get(croptxt)););"/>
+
+				<layer  name="photo1_thumbs_kuang" url="%SWFPATH%/photo/skin/kuang.png" align="left"  edge="left"  width="90" height="90" x="0" y="0" zorder="1005"/>
+			</layer>
+		</layer>
+	</layer> -->
+	<!-- 缩略图区-->
+	 
+	<!-- 关闭按钮--> 
+	<layer  name="photo1_photobox_close" url="%SWFPATH%/zondy/pic/icon/x.png" align="righttop"  edge="righttop"  width="30" height="30" x="-10" y="-10" onhover="showtext('关闭');" onclick="set(layer[photo1].visible,false)" zorder="1015"/>
+<!-- 关闭按钮--> 
+
+</layer>
+
+</krpano>

@@ -27,7 +27,7 @@
 	               maps_zoombuttons="false"
 	               gyro="true"
 	               webvr="true"
-	               littleplanetintro="true"
+	               littleplanetintro="false"
 	               title="true"
 	               thumbs="true"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
@@ -134,6 +134,9 @@
 			<!-- 加入热点 -->
 	<include url="%SWFPATH%/zondy/hotspot/hs1.xml" />
 	<include url="%SWFPATH%/zondy/point_pic.xml" />
+	
+	<!-- <include url="%SWFPATH%/zondy/hotspot/hs2.xml" /> -->
+	<!-- <include url="%SWFPATH%/zondy/show_txt.xml" /> -->
 	
 	</scene>
 

@@ -1,0 +1,26 @@
+﻿<krpano>
+
+		<!-- place your scene hotspots here -->
+		
+	<hotspot name="hs2" fillcolor="0x00cba3" fillalpha="0.3" borderwidth="3.0" bordercolor="0x00cba3"
+                 borderalpha="0.6"
+                 onclick="if(layer[textfield].visible,tween(layer[textfield].alpha,0);delayedcall(0.5,set(layer[textfield].visible,false)) ,set(layer[textfield].visible,true);tween(layer[textfield].alpha,1) )"
+                 depth="1000"
+                 polyline="false"
+                 scaleflying="true"
+                 tx="0"
+                 ty="0"
+                 tz="0"
+				 ath="178.109818" atv="0.528136">
+<!-- 		<point ath="-166.716226" atv="25.306117" />
+		<point ath="-166.673013" atv="32.190486" />
+		<point ath="-159.56873" atv="32.054768" />
+		<point ath="-160.627539" atv="27.063136" />
+		<point ath="-152.845994" atv="26.593386" />
+		<point ath="-150.343185" atv="31.119918" />
+		<point ath="-143.71696" atv="30.195073" />
+		<point ath="-148.429461" atv="24.172164" /> -->
+	</hotspot>		
+
+
+</krpano>

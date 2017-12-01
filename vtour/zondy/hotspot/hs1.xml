@@ -7,7 +7,7 @@
 	         tx="0"
 	         ty="0"
 	         tz="0"
-			 onclick="set(layer[photo1].visible,true);" onhover="showtext('信息展示');" onover="" onout="" >
+			 onclick="set(layer[photo1].visible,true);" onhover="showtext('水库风景照欣赏');" onover="" onout="" >
 			 <!-- ath="129.832179" atv="9.345424"	> -->
 
 	</hotspot>
