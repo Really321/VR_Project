@@ -2,8 +2,7 @@
 	<hotspot name="hs1" text="七星湾"
 	         style="skin_hotspotstyle"
 			 ath="-147.99832" atv="5.8466"/>
-			 <!-- ath="-135.822378" atv="1.565953" /> -->
-			 
+						 
     <hotspot name="hs2" text="插旗岭"
 	         style="skin_hotspotstyle"
 			 ath="178.109818" atv="0.528136" />	
@@ -39,7 +38,35 @@
 	<hotspot name="hs10" text="大亚湾"
 	         style="skin_hotspotstyle"
 			 ath="-61.152475" atv="-16.411761"  />			 
-			 
+	<hotspot name="hs11" fillcolor="0xFF0000" fillalpha="0.0" borderwidth="2.0" bordercolor="0xFF0000" borderalpha="0.0"  borderwidth="3.0" 
+	         depth="1000"
+	         polyline="false"
+	         scaleflying="false"
+	         tx="0"
+	         ty="0"
+	         tz="0"	>		 
+			<point ath="112.473597" atv="9.392188" />
+			<point ath="128.225374" atv="5.78672" />
+			<point ath="140.566087" atv="8.068648" />
+			<point ath="147.101532" atv="12.538549" />
+			<point ath="131.450187" atv="15.979326" />
+	</hotspot>
+
+	<hotspot name="hs12" fillcolor="0xffffff" fillalpha="0.0" borderwidth="0.0" bordercolor="0x0000FF" borderalpha="0.0" borderwidth="3.0" 
+	         depth="1000"
+	         polyline="false"
+	         scaleflying="true"
+	         tx="0"
+	         ty="0"
+	         tz="0"
+	         >
+		<point ath="113.28201" atv="11.314001" />
+		<point ath="115.97846" atv="5.980003" />
+		<point ath="135.326349" atv="5.738289" />
+		<point ath="147.859459" atv="9.992423" />
+		<point ath="137.014045" atv="15.925548" />
+	</hotspot>
+	
 
 			 
 			 

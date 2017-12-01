@@ -7,6 +7,6 @@
 	         tx="0"
 	         ty="0"
 	         tz="0"	         
-			 onclick="if(layer[textfield].visible,tween(layer[textfield].alpha,0);delayedcall(0.5,set(layer[textfield].visible,false)) ,set(layer[textfield].visible,true);tween(layer[textfield].alpha,1) )"
+			 onclick="if(layer[textfield].visible,tween(layer[textfield].alpha,0);delayedcall(0.5,set(layer[textfield].visible,false)) ,set(layer[textfield].visible,true);tween(layer[textfield].alpha,1) ;			 set(hotspot[hs11].borderalpha,1.0);delayedcall(5,set(hotspot[hs11].borderalpha,0));set(hotspot[hs12].borderalpha,1);delayedcall(5,set(hotspot[hs12].borderalpha,0));)"
 			 onhover="showtext('水库信息简介');"/>
 </krpano>
