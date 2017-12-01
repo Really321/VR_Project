@@ -1,4 +1,4 @@
-﻿<krpano version="1.19" title="Virtual Tour">
+﻿<krpano version="1.19" title="大鹏半岛国家地质公园">
 
 	<include url="skin/vtourskin.xml" />
 	
@@ -79,40 +79,13 @@
 	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-
-	<!-- startup action - load the first scene -->
-	<action name="startup" autorun="onstart">
-		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
-		loadscene(get(startscene), null, MERGE);
-		if(startactions !== null, startactions() );
-	</action>
+	
+	<!-- 增加第一景角度等功能调整 -->
+	<include url="%SWFPATH%/zondy/action/first_scene.xml" />
+	<!-- 增加第一景角度等功能调整 模块结束 -->
 	
 	<!-- 增加动态热点执行动作模块 -->
-	<action name="do_crop_animation">
-	<!-- 为热点注册属性 -->
-	registerattribute(xframes, calc((imagewidth / %1) BOR 0));
-	registerattribute(yframes, calc((imageheight / %2) BOR 0));
-	registerattribute(frames, calc(xframes * yframes));
-	registerattribute(frame, 0);
- 
-	set(crop, '0|0|%1|%2');
- 
-	setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
-		if(loaded,
-			inc(frame);
-			if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
-			mod(xpos, frame, xframes);
-			div(ypos, frame, xframes);
-			Math.floor(ypos);
-			mul(xpos, %1);
-			mul(ypos, %2);
-			calc(crop, xpos + '|' + ypos + '|%1|%2');
-		  ,
-			clearinterval(calc('crop_anim_' + name));
-		  );
-	  );
-	</action>
+	<include url="%SWFPATH%/zondy/action/hs_action.xml" />
 	<!-- 增加动态热点执行动作模块结束 -->
 
 	
@@ -129,17 +102,20 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
+		<!-- 加入热点 -->	
+		<include url="%SWFPATH%/zondy/hotspot/hs.xml" />
+
+		<include url="%SWFPATH%/zondy/hotspot/hs1.xml" />
+		<!-- 加入热点功能模块结束 -->
 		
-	<include url="%SWFPATH%/zondy/hotspot/hs.xml" />
-			<!-- 加入热点 -->
-	<include url="%SWFPATH%/zondy/hotspot/hs1.xml" />
-	<!-- 点击热点出现图片 -->
-	<include url="%SWFPATH%/zondy/point_pic.xml" />
-	<!-- 点击热点出现图片模块功能结束 -->
-	<!-- 点击出现文字信息 -->
-	<include url="%SWFPATH%/zondy/point_identify.xml" />
-	<include url="%SWFPATH%/zondy/show_txt.xml" />
-	<!-- 点击热点出现文字功能结束 -->
+		<!-- 点击热点出现图片 -->
+		<include url="%SWFPATH%/zondy/point_pic.xml" />
+		<!-- 点击热点出现图片模块功能结束 -->
+		
+		<!-- 点击出现文字信息 -->
+		<include url="%SWFPATH%/zondy/point_identify.xml" />
+		<include url="%SWFPATH%/zondy/show_txt.xml" />
+		<!-- 点击热点出现文字功能结束 -->
 	</scene>
 
 

@@ -3,9 +3,9 @@
 
         <!-- 文本域，整个文本域的父元素textfield，包括了针对该文本域的位置和尺寸，通过align、x、y以及width、height进行修改。scale9grid属性能够使得图片边缘区域不被缩放，这样看起来背景会更加锐利。当然你可以不用这种带图片的做父元素，可以直接使用container，这样加载速度会大大加快。 -->
 
-        <layer name="textfield" url="%SWFPATH%/zondy/pic/icon/textfield.png" align="center" x="5" y="5" width="480" height="360" visible="false" bgalpha="0.1"
-						type="container" zorder="1000">
-                <!--  onclick="tween(alpha,0);delayedcall(0.5,set(visible,false))" -->
+        <layer name="textfield" url="%SWFPATH%/zondy/pic/icon/textfield.png" align="center" x="5" y="5" width="800" height="600" visible="false" bgalpha="0.1"
+						scale9grid="6|6|268|188" zorder="1000"
+                 onclick="tween(alpha,0);delayedcall(0.5,set(visible,false))">
 
             <!-- 滚动文字部分，基本的三大部分，一个是scrollarea插件必须要有的父元素，也就是textmask，它是一个容器container，width和height采用了负值，则是以父元素的尺寸加上该负值后的最终结果，也就是父元素的宽度减去30像素作为textmask的宽度，父元素高度减去10像素作为textmask的高度，同时maskchildren="true"也保证了文字滚动时不会超出遮罩区域。 -->
 
