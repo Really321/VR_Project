@@ -4,7 +4,7 @@
 <!-- *********此处定义照片开始的起始位置及总共数目**************** -->
 <skin_settings photo1_id="1" photo1_total="3" />
 <!-- 标题-->
-<layer name="photo1" visible="false" enabled="True" kejep="false" type="container" bgcolor="0x000000" bgalpha="0.6" align="center" width="700" height="560" x="0" y="0" zorder="1000">
+<layer name="photo1" visible="false" enabled="True" keep="false" type="container" bgcolor="0x000000" bgalpha="0.6" align="center" width="700" height="560" x="0" y="0" zorder="1000">
 
 	<layer name="photo1_phototext" keep="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="top" width="100%" height="50" x="0" y="0" zorder="1001">
 		<layer name="photo1_phototext_title" url="%SWFPATH%/plugins/textfield.swf" align="center" edge="center" width="95%" height="32" autoheight="true" x="0" y="0" zorder="1002" enabled="true" background="false" border="false" html="水库风景集锦" css="text-align:center; color:#FFFFFF; font-family:微软雅黑; font-size:26px;" textshadow="0" visible="true" />

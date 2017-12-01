@@ -15,7 +15,7 @@
 	<!-- *******添加跳转logo********* -->
 	<include url="%SWFPATH%/zondy/logo/skip_logo.xml"/>	
 	<!-- ********添加跳转logo******************** -->
-
+	
 	<!-- 引入右键菜单选项 -->
 	<include url="%SWFPATH%/zondy/mouse/contextmenu.xml" />
 	<!-- 引入右键菜单选项over -->
@@ -133,11 +133,13 @@
 	<include url="%SWFPATH%/zondy/hotspot/hs.xml" />
 			<!-- 加入热点 -->
 	<include url="%SWFPATH%/zondy/hotspot/hs1.xml" />
+	<!-- 点击热点出现图片 -->
 	<include url="%SWFPATH%/zondy/point_pic.xml" />
-	
-	<!-- <include url="%SWFPATH%/zondy/hotspot/hs2.xml" /> -->
-	<!-- <include url="%SWFPATH%/zondy/show_txt.xml" /> -->
-	
+	<!-- 点击热点出现图片模块功能结束 -->
+	<!-- 点击出现文字信息 -->
+	<include url="%SWFPATH%/zondy/point_identify.xml" />
+	<include url="%SWFPATH%/zondy/show_txt.xml" />
+	<!-- 点击热点出现文字功能结束 -->
 	</scene>
 
 

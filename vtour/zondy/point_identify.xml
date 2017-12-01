@@ -1,0 +1,12 @@
+<krpano>		
+		<layer name="hs1111" enabled="true" capture="true" keep="true" url="%SWFPATH%/zondy/pic/识别.png" scale="0.1"
+	         align="righttop" width="200" height="200" x="15" y="15"
+	         depth="1000"
+	         polyline="false"
+	         scaleflying="true"
+	         tx="0"
+	         ty="0"
+	         tz="0"	         
+			 onclick="if(layer[textfield].visible,tween(layer[textfield].alpha,0);delayedcall(0.5,set(layer[textfield].visible,false)) ,set(layer[textfield].visible,true);tween(layer[textfield].alpha,1) )"
+			 onhover="showtext('水库信息简介');"/>
+</krpano>
